@@ -1,5 +1,26 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  function hasTargetSum(array, target) {
+    // Iterate through each number in the array
+    for (let i = 0; i < array.length; i++) {
+      // Iterate through the remaining numbers in the array
+      for (let j = i + 1; j < array.length; j++) {
+        
+        if (array[i] + array[j] === target) {
+          return true; 
+        }
+      }
+    }
+    
+
+
+    return false; // No pair adds up to the target
+  }
+  
+  // Test cases
+  console.log(hasTargetSum([3, 8, 12, 4, 11, 7], 10)); // true
+  console.log(hasTargetSum([22, 19, 4, 6, 30], 25)); // true
+  console.log(hasTargetSum([1, 2, 5], 4)); // false
 }
 
 /* 
